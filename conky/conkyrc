@@ -1,0 +1,97 @@
+background no
+
+use_xft yes
+xftfont Joystix:size=8
+xftalpha 1.0
+
+update_interval 1.0
+
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 100 5
+maximum_width 400
+
+draw_shades no
+
+#default_color #c78dcb
+default_color white
+
+alignment top_right
+
+gap_x 2
+gap_y 2
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+use_spacer yes
+
+short_units yes
+
+# stuff after 'TEXT' will be formatted on screen
+
+TEXT
+${color #ddaa00}${hr 3 3}
+${color #ddaa00}${font Joystix:size=12}General Info ${voffset -2}${stippled_hr 5 5}${font}${color}
+${voffset 20}${color #ddaa00}${font DPComic:size=45}alexandredias${font}${color}
+${voffset -50}${goto 1280}${color #1793d0}${font openlogos:size=50}B${font}${color}
+${voffset -2}${goto 1270}${color #1793d0}Arch${color}Linux
+${color #ddaa00}Kernel:${color}$kernel
+${color #ddaa00}UpTime:${color}$uptime
+${color #ddaa00}Battery: ${color}${battery_percent BAT0}% ${battery_bar BAT0}
+${color #ddaa00}Time: ${color}${battery_time BAT0}
+${color #ddaa00}${hr 3 3}
+${color #ddaa00}${font Joystix:size=12}CPU ${voffset -2}${stippled_hr 5 5}${font}${color}
+${alignc}${color #ddaa00}Core 1:${color} ${cpu cpu1}% ${cpubar cpu1 10, 70} ${color #ddaa00}Core2 :${color} ${cpu cpu2}% ${cpubar cpu2 10, 70}
+${alignc}${color #ddaa00}Total Usage:${color } $cpu% ${color #ddaa00}Temperature: ${color}${acpitemp}°C
+${color #ddaa00}${hr 3 3}
+${color #ddaa00}${font Joystix:size=12}Memory ${voffset -2}${stippled_hr 5 5}${font}${color}
+${alignc}${color #ddaa00}RAM: ${color}$memperc% ${membar 10, 100} ${color #ddaa00}Swap: ${color}$swapperc% ${swapbar 10, 100}
+${alignc}${color #ddaa00}RAM Usage:${color } $mem/$memmax 
+#${memgraph 15,100 000000 000000}
+${color #ddaa00}${hr 3 3}
+${color #ddaa00}${font Joystix:size=12}Processes ${voffset -2}${stippled_hr 5 5}${font}${color}
+${color #ddaa00}Name                  PID          CPU Usage${font}${color}
+${color #ddaa00}${top name 1}    ${top pid 1}             ${top cpu 1}${font}${color}
+${color white}${top name 2}    ${top pid 2}             ${top cpu 2}${font}${color}
+${color white}${top name 3}    ${top pid 3}             ${top cpu 3}${font}${color}
+${color white}${top name 4}    ${top pid 4}             ${top cpu 4}${font}${color}
+${color #ddaa00}${hr 2 2}
+${color #ddaa00}Name                  PID          RAM Usage${font}${color}
+${color #ddaa00}${top_mem name 1}    ${top_mem pid 1}             ${top_mem mem 1}${font}${color}
+${color white}${top_mem name 2}    ${top_mem pid 2}             ${top_mem mem 2}${font}${color}
+${color white}${top_mem name 3}    ${top_mem pid 3}             ${top_mem mem 3}${font}${color}
+${color white}${top_mem name 4}    ${top_mem pid 4}             ${top_mem mem 4}${font}${color}
+${color #ddaa00}${hr 3 3}
+${color #ddaa00}${font Joystix:size=12}Network ${voffset -2}${stippled_hr 5 5}${font}
+${if_up wlp2s0b1}
+${color #ddaa00}Up:    ${color}${upspeedf wlp2s0b1} kB/s ${voffset -5}${upspeedgraph wlp2s0b1 15, 250 000000 000000}
+${color #ddaa00}Down:  ${color}${downspeedf wlp2s0b1} kB/s ${voffset -5}${downspeedgraph wlp2s0b1 15, 250 000000 000000}${endif}
+${if_up eno1}
+${color #ddaa00}Up:    ${color}${upspeedf eno1} kB/s ${voffset -5}${upspeedgraph eno1 15, 250 000000 000000}
+${color #ddaa00}Down: ${color}${downspeedf eno1} kB/s ${voffset -5}${downspeedgraph eno1 15, 250 000000 000000}${endif}
+${color #ddaa00}${hr 3 3}
+${color #ddaa00}${font Joystix:size=12}Disk ${voffset -2}${stippled_hr 5 5}${font}
+${color #ddaa00}Root: ${color}${fs_used /}/${fs_size /}  ${fs_used_perc /}%  ${fs_bar 10, 200 /}
+${color #ddaa00}Home: ${color}${fs_used /home}/${fs_size /home}  ${fs_used_perc /home}%  ${fs_bar 10, 200 /home}
+${color #ddaa00}${hr 3 3}
+${color #ddaa00}${font Joystix:size=12}Date ${voffset -2}${stippled_hr 5 5}${font}
+${color #ddaa00}${font Joystix:size=12}${alignc}${time %A}${font}
+${color #ddaa00}${font Joystix:size=30}${alignc}${time %I:%M %P}${font}
+${color #ddaa00}${font Joystix:size=12}${alignc}${time %b %d %Y}${font}
+${color #ddaa00}${hr 3 3}
