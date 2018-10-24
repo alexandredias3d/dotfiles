@@ -1,3 +1,13 @@
 ## dotfiles
 
-Repository containing some of my dotfiles aiming to ease future configuration.
+This repository contain the configurations of several dotfiles.
+
+As of Oct 24 of 2018, I am using:
+- conky
+- nvim
+- openbox
+- tmux
+- xterm
+- zsh
+
+![Arch look](screnshots/2018-10-24.png)
