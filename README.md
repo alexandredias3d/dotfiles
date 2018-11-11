@@ -10,4 +10,4 @@ As of Oct 24 of 2018, I am using:
 - xterm
 - zsh
 
-![Arch look](screnshots/2018-10-24.png?raw=true 'Arch look')
+![Arch look](https://raw.githubusercontent.com/alexandredias3d/dotfiles/master/screenshots/2018-10-24.png)
