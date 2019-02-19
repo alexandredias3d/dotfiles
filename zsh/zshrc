@@ -1,4 +1,3 @@
-source ~/.zsh/antigen-hs/init.zsh
 setopt prompt_subst
 autoload -U colors && colors # Enable colors in prompt
 
@@ -63,3 +62,5 @@ git_info() {
 PS1='
 %{$fg[yellow]%}%~%u $(git_info)
 %(?.%{$fg[blue]%}.%{$fg[red]%})%(!.#.❯)%{$reset_color%} '
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

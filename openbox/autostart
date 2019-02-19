@@ -1,1 +1,3 @@
 sh ~/.fehbg &
+sh ~/.screenlayout/labdualdisplay.sh &
+xscreensaver -no-splash &
