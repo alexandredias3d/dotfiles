@@ -1,19 +1,22 @@
 #!/bin/bash
 
-# nvim configuration
+# nvim
 mkdir -p ~/.config/nvim/
 ln -f nvim/init.vim ~/.config/nvim/init.vim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# tmux configuration
+# tmux
 ln -f tmux/tmux.conf ~/.tmux.conf
 
-# xterm configuration
+# xterm
 ln -f xterm/Xresources ~/.Xresources
 
-# zsh configuration
+# zsh
 ln -f zsh/zshrc ~/.zshrc
 
-# openbox configuration
+# openbox
 ln -f openbox/* ~/.config/openbox
+
+# xdg
+ln -f xdg/user-dirs.dirs ~/.config/
