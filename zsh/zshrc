@@ -67,6 +67,15 @@ PS1='
 
 # Enabling virtualenvwrapper.
 # Using the lazy version to avoid slowing down shell startup
-export WORKON_HOME=~/.virtualenv
-mkdir -p $WORKON_HOME
-source /usr/bin/virtualenvwrapper_lazy.sh
+VIRTUALENV="/usr/bin/virtualenvwrapper_lazy.sh"
+if [ -f $VIRTUALENV ]; then
+    export WORKON_HOME=~/.virtualenv
+    mkdir -p $WORKON_HOME
+    source $VIRTUALENV
+fi
+
+# Gurobi configuration
+export GUROBI_HOME="~/tool/gurobi811/linux64"
+export PATH="${PATH}:${GUROBI_HOME}/bin"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
+export GRB_LICENSE_FILE="~/tool/gurobi811/gurobi.lic"
